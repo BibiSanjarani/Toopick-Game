@@ -1,0 +1,68 @@
+
+#backSection{
+ 	height: 531px;
+    width: 514px;
+    background-color: orange;
+    margin: 80px auto 80px auto;
+    /*transform: translate(50%, 25%);*/
+    position: relative;
+
+}
+
+header {
+ height: 200px;
+ margin-left: 0px;
+ background-color: purple;
+ display: inline-block;
+ font-family: 'Oswald', sans-serif;
+ word-wrap: break-word;
+ 
+}
+
+header > #tooP{
+	font-family: 'Barrio', cursive;
+	font-size: 50px;
+	background-color: yellow;
+	display: inline-block;
+	word-wrap: break-word;
+}
+#tooP, #instructions, #caution{
+
+}
+#startButton{
+	min-height: 10em;
+    vertical-align: middle;
+    top: 50%;
+    left: 50%;
+
+}
+#backSection div {
+	
+	height:120px;
+	width: 120px;
+	background-color: pink;
+	display: inline-block;
+	/*border: solid;*/
+	/*transform: translate(9%, -2%);*/
+}
+.row1, .row2, .row3, .row4{
+	margin-top: 10px;
+	margin-right: 2.5px;
+	margin-left: 2.5px;
+
+}
+.row4{
+	margin-bottom: 10px;
+}
+
+{
+	font-family: 'Barrio', cursive;
+	font-size: 30px;
+	display: inline-block;
+}
+
+
+	
+
+
+
