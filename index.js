@@ -58,14 +58,10 @@ function randomShuffle(imgList){
 
 	// 	return  console.log("image added to tile 1");
 	// });
-// function clickTile(){
-	
-// 	$(".container").click(function(){
-	
-	
 
-// }
-
+$ (""){
+	
+}
 // toggle if you click on the image it turns over
 	//do if statement ; if match disable toggle
 			//add one to score 
