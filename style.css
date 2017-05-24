@@ -1,68 +1,58 @@
 
-#backSection{
- 	height: 531px;
-    width: 514px;
-    background-color: orange;
-    margin: 80px auto 80px auto;
-    /*transform: translate(50%, 25%);*/
-    position: relative;
+.container{
+        width: 100%; 
+        max-width: 1200px; 
 
 }
-
-header {
- height: 200px;
- margin-left: 0px;
- background-color: purple;
- display: inline-block;
- font-family: 'Oswald', sans-serif;
- word-wrap: break-word;
- 
+body {
+	background: white;
+	height: 100vh;
+	width: 100vw;
+	font-family: 'Oswald', sans-serif ;
+	color: black;
 }
 
-header > #tooP{
+h1 {
+	font-size: 100px;
 	font-family: 'Barrio', cursive;
-	font-size: 50px;
-	background-color: yellow;
-	display: inline-block;
-	word-wrap: break-word;
-}
-#tooP, #instructions, #caution{
+	text-align: center;
 
 }
 #startButton{
-	min-height: 10em;
-    vertical-align: middle;
-    top: 50%;
-    left: 50%;
+	text-align: center;
+	color: white;
 
 }
-#backSection div {
-	
-	height:120px;
-	width: 120px;
-	background-color: pink;
-	display: inline-block;
-	/*border: solid;*/
-	/*transform: translate(9%, -2%);*/
-}
-.row1, .row2, .row3, .row4{
-	margin-top: 10px;
-	margin-right: 2.5px;
-	margin-left: 2.5px;
+.container {
+	text-align: center;
+    list-style-type: none;
+    width: 600px;
+    -webkit-padding-start: 0;
+    margin: 0 auto;
 
 }
-.row4{
-	margin-bottom: 10px;
+.container img {
+	list-style-type: none;
+	box-sizing: border-box;
+	width: 150px;
+	height: 150px;
+	float: left;
+	border: 1px solid blue;
+	border-radius: 10px;
 }
+/*.container div  {
+	list-style-type: none;
+	box-sizing: border-box;
+	width: 150px;
+	height: 150px;
+	float: left;
+	border: 1px solid blue;
+	border-radius: 10px;
+}*/
 
-{
-	font-family: 'Barrio', cursive;
-	font-size: 30px;
-	display: inline-block;
+button{
+	height: 40px;
+	width: 100px;
+	border-radius: 10px;
 }
-
-
-	
-
-
 
