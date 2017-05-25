@@ -14,10 +14,11 @@ function starting() {
 
 	document.getElementById('startButton').addEventListener("click", function(event){
 		event.preventDefault();
-		console.log("start button : working")
+		console.log("start button : working");
 		getRandomImages()
 	});
 }
+
 // get images to appear on the grid
 	//1. add event listener to tiles
 	//2. on click of start add element img
@@ -61,26 +62,25 @@ function randomShuffle(imgList){
 }
 
 function getImgSrc(){
+
 	$("img").click(function() {
-		if (score <= 8){
+		flipTile360()
+		if (score <= 8 ){
 			var imgSrc = $(this).attr("src");
-			imgArr.push(imgSrc)
+			imgArr.push(imgSrc);
 
 			if (imgArr.length === 2){
-				compareSrc(imgArr[0],imgArr[1])}
-			// }else{
-			// 	// console.log(imgArr);
-			// }
-		}else{
-			imgArr = []
-			console.log("buggy");
+				compareSrc(imgArr[0],imgArr[1]);
+				imgArr = []
+			}
+			
 		}
-	});
+	})
 }
 function compareSrc(imgSrc,imgSrc2){
 	if (imgArr[0]===imgArr[1]){
 		score ++ ;
-		document.getElementById("score").innerHTML = "Your score is "+score;
+		document.getElementById("score").innerHTML = +score;
 		console.log("match");
 	}else{
 		imgSrc = null
@@ -90,14 +90,34 @@ function compareSrc(imgSrc,imgSrc2){
 	
 }
 
-// function flipTile(){
-// 	$('.container').each(function(i,name){
-//   		$(this).click(function(event){
-//     		$(event.target).css('transform','rotateY(360deg)')
-//   		})
-// 	})
-// }
 
+function flipTile360(){
+	$('.container').each(function(i,name){
+  		$(this).click(function(event){
+    		$(event.target).css('transform','rotateY(360deg)')
+  		})
+	})
+}
+
+function flipTile (){
+	$('.container').each(function(i,name){
+  		this.click(function(event){
+     	$(event.target).css('transform','rotateY(360deg)')
+  		})
+	})
+}
+function getTileCover(){
+	
+}
+function addTileCover (){
+	getImages()
+}
+
+// function looper(){
+// 	while (score <=8){
+		
+// 	}
+// }
 
 // toggle if you click on the image it turns over
 

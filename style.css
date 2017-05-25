@@ -59,7 +59,7 @@ button:hover{
     width: 600px;
     -webkit-padding-start: 0;
     margin: 0 auto;
-
+	
 }
 .container img {
 	list-style-type: none;
@@ -70,11 +70,10 @@ button:hover{
 	border-radius: 10px;
 	border: 3px solid #D00000;
 	padding: 2px;
-}
-
-#onclick {
+	transition:0.5s;
+    backface-visibility: hidden;
+    perspective: 800px;
 	
-    transition: width 2s, height 4s;
 }
 
 /*.container div  {
