@@ -1,4 +1,8 @@
 //initialise DOM
+
+
+var imgArr = [];
+var score =0 ;
 $ (init)
 
 function init (){
@@ -20,6 +24,7 @@ function starting() {
 	//3. add images to divs
 	//4. add class to format images to tile size
 
+
 function getRandomImages () {
 	var imgName = [
 		"./images/1181083833_eightbit.jpg",
@@ -35,6 +40,7 @@ function getRandomImages () {
 	var imgList = imgName.concat(imgName);
 	randomShuffle(imgList)
 	getImages(imgList)
+	getImgSrc()
 	
 }
 function getImages (imgList){
@@ -51,28 +57,46 @@ function randomShuffle(imgList){
         imgList[j] = temp;
     }
     // console.log(imgList);
-  	getImgSrc()
+  	
 }
-	
+
 function getImgSrc(){
-	// for (i=0; i < 16;i++){
-	// 	// var imgSrc = document.getElementById("tile"+i).getAttribute("src");
-	// 	// var tileNumber
-	// 	// 
-	// 	// 	console.log("imgSrc");
+	$("img").click(function() {
+		if (score <= 8){
+			var imgSrc = $(this).attr("src");
+			imgArr.push(imgSrc)
 
-	// 	}
-$("img").click(function(){
-	$("").addClass("visible")
-	for (i=0; i < 16;i++){
-	var getImgSrc =var imgSrc = document.getElementById("tile"+i).getAttribute("src");
-
-	console.log("tile working");
-
+			if (imgArr.length === 2){
+				compareSrc(imgArr[0],imgArr[1])}
+			// }else{
+			// 	// console.log(imgArr);
+			// }
+		}else{
+			imgArr = []
+			console.log("buggy");
+		}
+	});
+}
+function compareSrc(imgSrc,imgSrc2){
+	if (imgArr[0]===imgArr[1]){
+		score ++ ;
+		document.getElementById("score").innerHTML = "Your score is "+score;
+		console.log("match");
+	}else{
+		imgSrc = null
+		imgSrc2 = null
+		console.log("no match");
 	}
-});	
-		
 	
+}
+
+// function flipTile(){
+// 	$('.container').each(function(i,name){
+//   		$(this).click(function(event){
+//     		$(event.target).css('transform','rotateY(360deg)')
+//   		})
+// 	})
+// }
 
 
 // toggle if you click on the image it turns over
