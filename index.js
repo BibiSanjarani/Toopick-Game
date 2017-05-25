@@ -14,8 +14,6 @@ function starting() {
 		getRandomImages()
 	});
 }
-
-
 // get images to appear on the grid
 	//1. add event listener to tiles
 	//2. on click of start add element img
@@ -36,9 +34,10 @@ function getRandomImages () {
 
 	var imgList = imgName.concat(imgName);
 	randomShuffle(imgList)
-	putImages(imgList)
+	getImages(imgList)
+	
 }
-function putImages (imgList){
+function getImages (imgList){
 	for (var i = 0; i < imgList.length; i++){
 		var tileNumber = document.getElementById("tile"+i);
 		tileNumber.src = imgList[i]		
@@ -51,18 +50,33 @@ function randomShuffle(imgList){
         imgList[i] = imgList[j];
         imgList[j] = temp;
     }
-    return imgList;
+    // console.log(imgList);
+  	getImgSrc()
 }
-	// var tile = document.getElementsByClassName('container');
-	// document.getElementById('tile').addEventListener("click",function(){
-
-	// 	return  console.log("image added to tile 1");
-	// });
-
-$ (""){
 	
-}
+function getImgSrc(){
+	// for (i=0; i < 16;i++){
+	// 	// var imgSrc = document.getElementById("tile"+i).getAttribute("src");
+	// 	// var tileNumber
+	// 	// 
+	// 	// 	console.log("imgSrc");
+
+	// 	}
+$("img").click(function(){
+	$("").addClass("visible")
+	for (i=0; i < 16;i++){
+	var getImgSrc =var imgSrc = document.getElementById("tile"+i).getAttribute("src");
+
+	console.log("tile working");
+
+	}
+});	
+		
+	
+
+
 // toggle if you click on the image it turns over
+
 	//do if statement ; if match disable toggle
 			//add one to score 
 			// var score =0 

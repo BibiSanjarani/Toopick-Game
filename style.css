@@ -72,6 +72,11 @@ button:hover{
 	padding: 2px;
 }
 
+#onclick {
+	
+    transition: width 2s, height 4s;
+}
+
 /*.container div  {
 	list-style-type: none;
 	box-sizing: border-box;
