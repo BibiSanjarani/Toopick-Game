@@ -1,6 +1,4 @@
 //initialise DOM
-
-
 var imgArr = [];
 var score =0 ;
 $ (init)
@@ -16,6 +14,9 @@ function starting() {
 		event.preventDefault();
 		console.log("start button : working");
 		getRandomImages()
+		getTileCover()
+		addTileCover()
+
 	});
 }
 
@@ -57,7 +58,6 @@ function randomShuffle(imgList){
         imgList[i] = imgList[j];
         imgList[j] = temp;
     }
-    // console.log(imgList);
   	
 }
 
@@ -106,12 +106,21 @@ function flipTile (){
   		})
 	})
 }
-function getTileCover(){
-	
+function getTileCover(blankTile){
+	var blankTile = ("./images/blankTile.jpg");
 }
-function addTileCover (){
-	getImages()
-}
+// function addTileCover(blankTile){
+// 	
+
+// 	setTimeout(function(){ 
+
+// 		for (var i = 0; i < 16; i++){
+
+// 			var numberBlankTile = document.getElementById("tile"+i);
+// 			numberBlankTile.src = blankTile;
+// 		}
+// 	}, 5000);	
+// }
 
 // function looper(){
 // 	while (score <=8){
