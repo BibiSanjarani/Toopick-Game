@@ -10,24 +10,23 @@ function init (){
 //function to start game
 function starting() {
 
-	$('#startButton').click(function() {
+	$('#startButton').click(function(event) {
 		event.preventDefault();
-		$('#runner').runner({
-		    countdown: true,
-		    startAt: 30000,
-		    milliseconds: false,
-		});
+		getRandomImages();
 		console.log("start button : working");
-		$('#runner').runner('info');
-		showsGridAtEnd()
+		setTimeout(function(){
+			$(".row img").addClass("hide");
+		}, 5000);
 	});
+
 }
 
 function showsGridAtEnd (imgList){
 	setTimeout(function(){
-	getRandomImages () 
-	console.log(" 30 seconds up");
+		getRandomImages () 
+		console.log(" 30 seconds up");
 	}, 30000);
+}
 
 function unbinder (){
 	$("img").unbind("click", function(){
@@ -41,9 +40,9 @@ function binder(){
 	$(".container").bind("click" ,function(){
 	});
 }
-function showe(){
-	$("img").attr("src").show();
-	
+function shower(){
+	$(event.target).attr("src").show(5000, function(){
+	});
 }
 // get images to appear on the grid
 	//1. add event listener to tiles
@@ -94,16 +93,22 @@ function getImgSrc(){
 
 	$("img").click(function() {
 		flipTile360()
+		$(this).removeClass("hide")
+
 		if (score <= 7 ){
 			var imgSrc = $(this).attr("src");
 			imgArr.push(imgSrc);
+		    // imgSrc.show()
 
 			if (imgArr.length === 2){
 				compareSrc(imgArr[0],imgArr[1]);
+				
+
 				imgArr = []
 			}
 			
-		}else{
+		} else {
+
 			
 		}
 	})
@@ -115,8 +120,13 @@ function compareSrc(imgSrc,imgSrc2){
 		unbinder()
 		console.log("match");
 	}else{
-		imgSrc = null
-		imgSrc2 = null
+		(function (imgArr) {
+					setTimeout(function(){
+						$("[src='" + imgArr[0] + "']").addClass("hide");
+						$("[src='" + imgArr[1] + "']").addClass("hide");					
+					}, 1500)
+				})(imgArr)
+
 		console.log("no match");
 	}
 	
@@ -134,12 +144,13 @@ function flipTile360(){
 function flipTile (){
 	$('.container').each(function(i,name){
   		this.click(function(event){
-     	$(event.target).css('transform','rotateY(360deg)')
+     		$(event.target).css('transform','rotateY(360deg)')
   		})
 	})
-}
 
 }
+
+
 
 // function getTileCover(blankTile){
 // 	var blankTile = ("./images/blankTile.jpg");
