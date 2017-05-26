@@ -24,10 +24,9 @@ function starting() {
 	//3. add images to divs
 	//4. add class to format images to tile size
 function gridFlash (){
-	for (var i = 0; i < imgList.length; i++){
-		var tileNumber = document.getElementById("tile"+i);	
-	}
-	$((tileNumber.src).show(5000,getRandomImages()));
+	for (var i =0 ; i <=15 ; i++)
+	var getNumber = document.getElementById("tile"+i);
+	$((getNumber.src).show(5000,getRandomImages()));
 }
 
 
