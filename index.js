@@ -13,7 +13,7 @@ function starting() {
 	document.getElementById('startButton').addEventListener("click", function(event){
 		event.preventDefault();
 		console.log("start button : working");
-		gridFlash()
+		getRandomImages()
 
 	});
 }
@@ -23,12 +23,11 @@ function starting() {
 	//2. on click of start add element img
 	//3. add images to divs
 	//4. add class to format images to tile size
-function gridFlash (){
-	for (var i =0 ; i <=15 ; i++)
-	var getNumber = document.getElementById("tile"+i);
-	$((getNumber.src).show(5000,getRandomImages()));
-}
 
+
+	// var getNumber = document.getElementById("tile"+i);
+	// getRandomImages(getNumber)
+	// $((getNumber.src).show(5000,getRandomImages()));
 
 function getRandomImages () {
 	var imgName = [
@@ -111,21 +110,22 @@ function flipTile (){
   		})
 	})
 }
+function showsGridAtEnd (imgList){
+	setTimeout(function(){
+	getRandomImages () 
+	console.log(" 30 seconds up");
+	$("img").unbind("click", function(){
+		alert("GAME OVER. Yor final score is "+ score);
+	});
+	}, 30000);
+}
+
 function getTileCover(blankTile){
 	var blankTile = ("./images/blankTile.jpg");
 }
 // function addTileCover(blankTile){
 // 	
 
-// 	setTimeout(function(){ 
-
-// 		for (var i = 0; i < 16; i++){
-
-// 			var numberBlankTile = document.getElementById("tile"+i);
-// 			numberBlankTile.src = blankTile;
-// 		}
-// 	}, 5000);	
-// }
 
 // function looper(){
 // 	while (score <=8){
