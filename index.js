@@ -13,7 +13,7 @@ function starting() {
 	document.getElementById('startButton').addEventListener("click", function(event){
 		event.preventDefault();
 		console.log("start button : working");
-		getRandomImages()
+		gridFlash()
 
 	});
 }
@@ -23,6 +23,12 @@ function starting() {
 	//2. on click of start add element img
 	//3. add images to divs
 	//4. add class to format images to tile size
+function gridFlash (){
+	for (var i = 0; i < imgList.length; i++){
+		var tileNumber = document.getElementById("tile"+i);	
+	}
+	$((tileNumber.src).show(5000,getRandomImages()));
+}
 
 
 function getRandomImages () {
@@ -71,6 +77,8 @@ function getImgSrc(){
 				compareSrc(imgArr[0],imgArr[1]);
 				imgArr = []
 			}
+			
+		}else{
 			
 		}
 	})
