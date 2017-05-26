@@ -19,14 +19,14 @@ function starting() {
 		});
 		console.log("start button : working");
 		$('#runner').runner('info');
-		getRandomImages()
+		showsGridAtEnd()
 	});
 }
+
 function showsGridAtEnd (imgList){
 	setTimeout(function(){
 	getRandomImages () 
 	console.log(" 30 seconds up");
-	unbinder()
 	}, 30000);
 
 function unbinder (){
@@ -34,6 +34,16 @@ function unbinder (){
 	});
 	$(".container").unbind("click", function(){
 	});
+}
+function binder(){
+	$("img").bind("click" ,function(){
+	});
+	$(".container").bind("click" ,function(){
+	});
+}
+function showe(){
+	$("img").attr("src").show();
+	
 }
 // get images to appear on the grid
 	//1. add event listener to tiles
