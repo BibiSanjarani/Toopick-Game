@@ -14,8 +14,6 @@ function starting() {
 		event.preventDefault();
 		console.log("start button : working");
 		getRandomImages()
-		getTileCover()
-		addTileCover()
 
 	});
 }
@@ -65,7 +63,7 @@ function getImgSrc(){
 
 	$("img").click(function() {
 		flipTile360()
-		if (score <= 8 ){
+		if (score <= 7 ){
 			var imgSrc = $(this).attr("src");
 			imgArr.push(imgSrc);
 
