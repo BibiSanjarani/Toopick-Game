@@ -10,14 +10,31 @@ function init (){
 //function to start game
 function starting() {
 
-	document.getElementById('startButton').addEventListener("click", function(event){
+	$('#startButton').click(function() {
 		event.preventDefault();
+		$('#runner').runner({
+		    countdown: true,
+		    startAt: 30000,
+		    milliseconds: false,
+		});
 		console.log("start button : working");
+		$('#runner').runner('info');
 		getRandomImages()
-
 	});
 }
+function showsGridAtEnd (imgList){
+	setTimeout(function(){
+	getRandomImages () 
+	console.log(" 30 seconds up");
+	unbinder()
+	}, 30000);
 
+function unbinder (){
+	$("img").unbind("click", function(){
+	});
+	$(".container").unbind("click", function(){
+	});
+}
 // get images to appear on the grid
 	//1. add event listener to tiles
 	//2. on click of start add element img
@@ -85,6 +102,7 @@ function compareSrc(imgSrc,imgSrc2){
 	if (imgArr[0]===imgArr[1]){
 		score ++ ;
 		document.getElementById("score").innerHTML = +score;
+		unbinder()
 		console.log("match");
 	}else{
 		imgSrc = null
@@ -110,19 +128,12 @@ function flipTile (){
   		})
 	})
 }
-function showsGridAtEnd (imgList){
-	setTimeout(function(){
-	getRandomImages () 
-	console.log(" 30 seconds up");
-	$("img").unbind("click", function(){
-		alert("GAME OVER. Yor final score is "+ score);
-	});
-	}, 30000);
+
 }
 
-function getTileCover(blankTile){
-	var blankTile = ("./images/blankTile.jpg");
-}
+// function getTileCover(blankTile){
+// 	var blankTile = ("./images/blankTile.jpg");
+// }
 // function addTileCover(blankTile){
 // 	
 
